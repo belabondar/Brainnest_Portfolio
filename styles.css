@@ -141,14 +141,34 @@ main .project-grid {
 }
 
 main .card {
-    border-radius: 5px;
+    border-radius: 10px;
     position: relative;
     height: 100%;
     width: 100%;
-
-    background: linear-gradient(90deg, hsla(333, 100%, 53%, 1) 0%, hsla(33, 94%, 57%, 1) 100%);
+    background-color: var(--header2, white);
+    transition: all 500ms ease-in;
 
     aspect-ratio: 5/7;
+}
+
+main .card::before {
+    content: "";
+    border-radius: inherit;
+    inset: 0px;
+    position: absolute;
+    background: linear-gradient(90deg, hsla(333, 100%, 53%, 1) 0%, hsla(33, 94%, 57%, 1) 100%);
+    opacity: 0;
+    z-index: 0;
+}
+main .card:hover {
+    scale: 1.05;
+}
+main .card:hover:before {
+    opacity: 1;
+}
+
+main .card:hover .content {
+    background-color: rgba(10, 10, 10, 0);
 }
 main .card .content {
     background-color: rgba(10, 10, 10, 0.5);
@@ -159,8 +179,9 @@ main .card .content {
     border-radius: inherit;
     overflow: hidden;
     position: absolute;
-    inset: 2px;
+    inset: 1px;
     display: flex;
+    transition: 200ms ease-in;
 }
 
 main .card .text {
