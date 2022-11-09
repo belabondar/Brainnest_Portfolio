@@ -281,7 +281,7 @@ footer .actions {
 @media (min-width: 500px) {
     main {
     margin-top: 5em;
-}
+    }   
 
     header {
         align-items: center;
@@ -328,11 +328,9 @@ footer .actions {
     .text-l {
         font-size: 50px;
     }
+}
 
 @media (min-width: 1000px) {
-    body {
-    }
-
     header .content-wrapper {
         flex-direction: row;
         margin-top: 5rem;
