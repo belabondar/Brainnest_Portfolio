@@ -32,9 +32,15 @@ body {
     color: var(--text, white);
     overflow-x: hidden;
 }
+
 picture {
     padding: 0;
     margin: 0;
+}
+
+.sr-only {
+    position: absolute;
+    visibility: hidden;
 }
 
 .stacked {
@@ -139,6 +145,9 @@ main {
 main .content-wrapper {
     justify-content: center;
     align-content: center;
+}
+
+main .content-wrapper h2 {
     text-align: center;
 }
 
@@ -170,13 +179,17 @@ main .card::before {
     opacity: 0;
     z-index: 0;
 }
-main .card:hover {
+main .card:hover,   
+main .card:focus {
     scale: 1.05;
+    outline: none;
 }
-main .card:hover:before {
+main .card:hover:before,
+main .card:focus:before {
     opacity: 1;
 }
-main .card:hover .content img {
+main .card:hover .content img,
+main .card:focus .content img {
     filter: brightness(100%);
     scale: 1.05;
 }
