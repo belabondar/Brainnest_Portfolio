@@ -21,11 +21,38 @@
     padding: 0;
 }
 
+html {
+    overflow-y: overlay;
+}
+
 a{
     text-decoration: none;
 }
 
 /* STYLING */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
 
 body {
     font-family: 'PT Serif', serif;
@@ -40,6 +67,7 @@ i.icon {
 
 header::before {
     background-color: var(--header);
+    width: 100vw;
     clip-path: polygon(
     0 0,
     100% 0,
